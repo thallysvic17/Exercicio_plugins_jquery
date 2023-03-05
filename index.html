@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Exercicio Jquery</title>
+</head>
+<body>
+    <div class="container">
+        <form id="form">
+                <h3>Formulario de Cadastro</h3>
+            <div class="form-campo">
+                <input type="text" id="nome" required placeholder="Nome Completo">
+            </div>
+            <div class="form-campo">
+                <input type="tel" id="telefone" required placeholder="telefone">
+            </div>
+            <div class="form-campo">
+                <input type="mail" id="mail" required placeholder="Email">
+            </div>
+            <div class="form-campo">
+                <input type="text" id="cpf" required placeholder="CPF">
+            </div>
+            <div class="form-campo">
+                <input type="text" id="cep" required placeholder="CEP">
+            </div>
+            <div class="form-campo">
+                <input type="text" id="endereco" required placeholder="Endereço">
+            </div>
+            <button type="submit">Enviar</button>
+            <div id="mensagem"></div>
+        </form>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="./Js/jquery.mask.min.js"></script>
+    <script>
+            $(document).ready(function() { 
+            
+            $('#telefone').mask('(00) 00000-0000')
+            $('#cpf').mask('000.000.000-00')
+            $('#cep').mask('00000-000')
+
+        });
+    </script>
+<script>
+    document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    alert("O formulário foi enviado com sucesso. Obrigado!");
+    location.reload();
+    });
+</script>
+
+</script>
+</body>
+
+</html>
