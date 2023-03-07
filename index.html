@@ -21,10 +21,10 @@
                 <input type="text" name= mail id="mail"  placeholder="Email">
             </div>
             <div class="form-campo">
-                <input type="text"  name= cpf id="cpf"  placeholder="CPF">
+                <input type="text"  name=cpf id="cpf"  placeholder="CPF">
             </div>
             <div class="form-campo">
-                <input type="text"  name= cep id="cep"   placeholder="CEP">
+                <input type="text"  name=cep id="cep"   placeholder="CEP">
             </div>
             <div class="form-campo">
                 <input type="text"  name= endereco  id="endereco" placeholder="Endereço">
@@ -45,7 +45,7 @@
             
             $('#telefone').mask('(00) 00000-0000')
             $('#cpf').mask('000.000.000-00')
-            $('#cep').mask('00000-000')
+            $('#cep').mask('00000-000.')
             
             $("#form").validate({
                 rules: {
@@ -54,27 +54,32 @@
                         minlength: 10,
                         minWords: 2
                     },
+                    tel :{
+                        required : true
+                    },
                     mail:{
                         required : true,
                         email:true
                     },
                     cpf:{
+                        required : true,
                         cpfBR : true
-                    }
-
+                    },
+                    cep: {
+                        required : true
+                    },
+                    endereco :{
+                        required : true
+                        
+                    },
+                },
+                submitHandler: function(form){
+                    alert("formulario Enviado com Sucesso")
+                    form.submit()
                 }
             })
         });
     </script>
-<script>
-    document.querySelector('form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    alert("O formulário foi enviado com sucesso. Obrigado!");
-    location.reload();
-    });
-</script>
-
-</script>
 </body>
 
 </html>
